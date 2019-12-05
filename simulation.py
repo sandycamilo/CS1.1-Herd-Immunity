@@ -8,11 +8,11 @@ class Simulation:
     def __init__(self, initial_vaccinated, initial_infected, initial_healthy, virus, resultsfilename):
         '''Set up the initial simulation values'''
 
-        self.virus = virus 
-        self.initial_infected = initial_infected 
-        self.initial_healthy = initial_healthy
         self.initial_vaccinated = initial_vaccinated
-
+        self.initial_infected = initial_infected
+        self.initial_healthy = initial_healthy
+        self.virus = virus 
+    
         self.population = []
 
         self.population_size = initial_infected + initial_healthy + initial_vaccinated
@@ -42,12 +42,19 @@ class Simulation:
         	
     def print_population(self):
         '''Prints out every person in the population and their current attributes'''
+        for person in self.population:
+            print(person) 
         #TODO: finish this method
 
     def get_infected(self):
         '''Gets all the infected people from the population and returns them as a list'''
-        #TODO: finish this method
+        infected_people = []
 
+        for person in self.population:
+            if person.infection != None:
+                infected_people.append(person)
+        return infected_people
+        #TODO: finish this method
 
     def simulation_should_continue(self):
         '''Determines whether the simulation should continue.
@@ -56,8 +63,15 @@ class Simulation:
         If there are no more infected people left and everyone is either vaccinated or dead return False
         In all other cases return True'''
         #TODO: finish this method
+        if self.population == dead:
+            return False  
+        elif self.population == vaccinated:
+            return False
+        elif self.population == vaccinated or dead:
+            return False
+        else: 
+            True       
         
-
     def run(self):
         ''' This method should run the simulation until all requirements for ending
         the simulation are met.
