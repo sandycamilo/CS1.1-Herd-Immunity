@@ -63,11 +63,11 @@ class Simulation:
         If there are no more infected people left and everyone is either vaccinated or dead return False
         In all other cases return True'''
         #TODO: finish this method
-        if self.population == dead:
+        if self.population = dead:
             return False  
-        elif self.population == vaccinated:
+        elif self.population = vaccinated:
             return False
-        elif self.population == vaccinated or dead:
+        elif self.population = vaccinated or dead:
             return False
         else: 
             True       
