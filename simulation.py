@@ -43,7 +43,7 @@ class Simulation:
     def print_population(self):
         '''Prints out every person in the population and their current attributes'''
         for person in self.population:
-            print(person) 
+            return person 
 
     def get_infected(self):
         '''Gets all the infected people from the population and returns them as a list'''
@@ -51,7 +51,7 @@ class Simulation:
 
         for person in self.population:
             if person.infection != None:
-                infected_people.append(person)
+                infected_people.append(Person)
         return infected_people
 
     def simulation_should_continue(self):
@@ -147,7 +147,7 @@ class Simulation:
         assert infected.is_alive == True 
         assert random_person.is_alive == True
 
-        if random.is_vaccinated = False:
+        if random_person.is_vaccinated == False:
             num = random.randint(0,1)
             if num < reproduction_num:
                 random_person.infection = True
